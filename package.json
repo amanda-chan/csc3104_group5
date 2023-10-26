@@ -1,0 +1,18 @@
+{
+  "name": "csc3104_group5",
+  "version": "1.0.0",
+  "description": "cloud computing assignment",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "group 5",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "mysql2": "^3.6.2",
+    "sequelize": "^6.33.0",
+    "twilio": "^4.19.0"
+  }
+}
