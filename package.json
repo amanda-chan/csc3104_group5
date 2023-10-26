@@ -13,6 +13,7 @@
     "express-handlebars": "^7.1.2",
     "mysql2": "^3.6.2",
     "sequelize": "^6.33.0",
-    "twilio": "^4.19.0"
+    "twilio": "^4.19.0",
+    "web3": "^4.2.1"
   }
 }

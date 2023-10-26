@@ -27,17 +27,12 @@ const User = db.define('users', {
         unique: true,
         allowNull: false,
     },
-    public_key: {
-        type: Sequelize.STRING(128),
-        allowNull: false,
-    },
     private_key: {
         type: Sequelize.STRING(64),
         allowNull: false,
     },
     keystore_file_path: {
         type: Sequelize.STRING(255),
-        allowNull: false,
     },
     balance: {
         type: Sequelize.DECIMAL(18, 9),

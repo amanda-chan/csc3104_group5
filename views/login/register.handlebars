@@ -29,7 +29,10 @@
 
         <label for="confirm-password">Confirm Password:</label>
         <input type="password" id="confirm-password" name="confirmPassword" required>
+        <br>
+
         <span id="password-match-message" style="color: red;"></span>
+        <span id="error-message" style="color: red;">{{errorMessage}}</span>
         <br>
 
         <button type="submit">Register</button>
