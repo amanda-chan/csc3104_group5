@@ -17,7 +17,7 @@ geth --http --http.addr "0.0.0.0" --http.port 8545 --http.api "web3,eth,personal
 
 
 ## Run the app
-<p>Ensure that you have node js installed</p>
+###Ensure that you have node js installed
 ```bash
 node app.js
 ```
