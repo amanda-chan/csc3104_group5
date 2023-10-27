@@ -13,6 +13,8 @@
 ```bash
 geth --http --http.addr "0.0.0.0" --http.port 8545 --http.api "web3,eth,personal,net"
 ```
+<p>Ethereum and web3 documentation <a href="https://web3js.readthedocs.io/en/v1.10.0/getting-started.html#adding-web3">here</a></p>
+
 
 ## Run the app
 <p>Ensure that you have node js installed</p>
