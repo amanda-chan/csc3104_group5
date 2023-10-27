@@ -1,12 +1,11 @@
 const express = require('express');
 const crypto = require('crypto'); // for sha256 hashing
-const Web3 = require('web3'); // used for geth
+const { Web3 } = require('web3'); // used for geth
 const router = express.Router();
 const user = require('../models/User');
 
-// this part have error :/
 // initialize Web3.js with the URL of your Geth node
-const web3 = new Web3('http://localhost:8545');// replace with your Geth node URL
+const web3 = new Web3('http://localhost:8545'); // replace with your Geth node URL
 
 // function to hash string
 function sha256Hash(inputString) {
@@ -66,8 +65,8 @@ router.post('/register', async (req, res, next) => {
 
     // create a new user instance
     const newUser = user.build({
+        user_email: email,
         name: name,
-        email: email,
         role: role,
         password: hashedPassword,
         account_address: ethereumAddress,

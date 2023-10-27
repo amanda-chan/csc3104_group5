@@ -18,17 +18,17 @@ const User = db.define('users', {
         type: Sequelize.STRING(16),
     },
     password: {
-        type: Sequelize.STRING(64),
+        type: Sequelize.STRING,
         allowNull: false,
     },
     // attributes when an Ethereum account is created
     account_address: {
-        type: Sequelize.STRING(64),
+        type: Sequelize.STRING(255),
         unique: true,
         allowNull: false,
     },
     private_key: {
-        type: Sequelize.STRING(64),
+        type: Sequelize.STRING(255),
         allowNull: false,
     },
     keystore_file_path: {
