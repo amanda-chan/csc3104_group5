@@ -12,18 +12,23 @@ const Campaign = db.define('campaigns', {
     },
     title: {
         type: Sequelize.STRING(255),
+        allowNull: false,
     },
     description: {
         type: Sequelize.TEXT,
+        allowNull: true,
     },
     funding_target: {
         type: Sequelize.DECIMAL(18, 2),
+        allowNull: false,
     },
     minimum_contribution: {
         type: Sequelize.DECIMAL(18, 2),
+        allowNull: false,
     },
     campaign_duration: {
         type: Sequelize.DATE,
+        allowNull: false,
     },
     current_amount_raised: {
         type: Sequelize.DECIMAL(18, 2),
