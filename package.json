@@ -16,5 +16,8 @@
     "sequelize": "^6.33.0",
     "twilio": "^4.19.0",
     "web3": "^4.2.1"
+  },
+  "devDependencies": {
+    "hardhat": "^2.18.3"
   }
 }
