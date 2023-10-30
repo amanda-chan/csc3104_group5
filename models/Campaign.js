@@ -19,6 +19,9 @@ const Campaign = db.define('campaigns', {
     funding_target: {
         type: Sequelize.DECIMAL(18, 2),
     },
+    minimum_contribution: {
+        type: Sequelize.DECIMAL(18, 2),
+    },
     campaign_duration: {
         type: Sequelize.DATE,
     },
