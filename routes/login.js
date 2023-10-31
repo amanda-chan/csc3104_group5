@@ -1,11 +1,7 @@
 const express = require('express');
 const crypto = require('crypto'); // for sha256 hashing
-const { Web3 } = require('web3'); // used for geth
 const router = express.Router();
 const User = require('../models/User');
-
-// initialize Web3.js with the URL of your Geth node
-const web3 = new Web3('http://localhost:8545'); // replace with your Geth node URL
 
 // function to hash string
 function sha256Hash(inputString) {
@@ -79,15 +75,10 @@ router.post('/', async (req, res, next) => {
 
         req.session.user_email = user.user_email;
         req.session.name = user.name;
-        req.session.private_key = user.private_key;
+        req.session.role = user.role;
 
-        if (user.role == "Creator") { // if user is a Creator, head to creator dashboard
-
-            return res.redirect('/creator/dashboard');
-
-        } else { // if user is a Backer, head to backer dashboard
-
-        }
+        return res.redirect('/metamask');
+        
 
     } else {
 
@@ -123,21 +114,12 @@ router.post('/register', async (req, res, next) => {
         // hash password
         const hashedPassword = sha256Hash(password);
 
-        // create account with ethereum and retrieve details to be stored into db
-        const ethAccount = web3.eth.accounts.create();
-        const ethereumAddress = ethAccount.address;
-        const privateKey = ethAccount.privateKey;
-        const balance = 0;
-
         // create a new user instance
         const newUser = User.build({
             user_email: email,
             name: name,
             role: role,
             password: hashedPassword,
-            account_address: ethereumAddress,
-            private_key: privateKey,
-            balance: balance,
         });
 
         // save the new user to the database
@@ -145,6 +127,32 @@ router.post('/register', async (req, res, next) => {
 
         return res.redirect('/');
 
+    }
+
+});
+
+// handling GET requests for "/metamask"
+router.get('/metamask', (req, res) => {
+    res.render('login/metamask', { layout: false }); // render the metamask page
+});
+
+// handling POST requests for "/metamask"
+router.post('/metamask', async (req, res, next) => {
+
+    // get post details for ethereum address
+    const ethereumAddress = req.body.address;
+    req.session.address = ethereumAddress; // place the ethereum address in the session
+    console.log("Logged in with: %s", ethereumAddress);
+
+    const role = req.session.role;
+
+    if (role === "Creator") { // if user is a Creator, head to creator dashboard
+
+        return res.status(200).json({ redirectTo: '/creator/dashboard' })
+
+    } else { // if user is a Backer, head to backer dashboard
+
+        return res.status(200).json({ redirectTo: '/backer/dashboard' });
     }
 
 });
