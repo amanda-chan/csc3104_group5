@@ -57,6 +57,21 @@
             background-color: #9E2A2B;
             border:none;
         }
+
+        {{!-- for withdrawal css --}}
+        #successBtnStatus{
+            padding:10px; 
+            margin:10px;
+            background-color: #40916c;
+        }
+
+        {{!-- for donationcss --}}
+        #pendingBtnStatus{
+            padding:10px; 
+            margin:10px;
+            background-color: #ffc300;
+        }
+
         a{
             color:#EEF5DB;
             text-decoration: none;
@@ -78,13 +93,69 @@
     <div class="container">
         <!-- Content here -->
         <h1>Welcome back, {{name}}</h1>
-    
-        {{!-- form class here --}}
+        {{!-- form class here for withdraw request --}}
         <div class ="form">
             <div class ="card">
                 {{!-- name of the specific campagin clicked --}}
                 <div class ="card-header">
-                    <h5>Campagin Name</h5>
+                    <h5>Campagin Name (Withdraw Request)</h5>
+                    <div class="position-absolute top-0 end-0">
+                        <button class='btn btn-primary' id="successBtnStatus"> 
+                            Successful
+                        </button>
+                    </div>
+                     
+                    <p class="card-text">Description of the campagin</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Goal Amount</h5>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                                    <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                                </div> 
+                                <br>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Due Date</span>
+                                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" aria-label="Due Date" aria-describedby="basic-addon1">
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Contract Balance</h5>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Balance Geth</span>
+                                    <input type="text" class="form-control" placeholder="$0.00" aria-label="Balance Geth" aria-describedby="basic-addon1">
+                                </div>
+                                <h7 class="card-title">Withdrawl Request</h7>                                 
+                                <div class="input-group">
+                                    <input min="0"  type="number" class="form-control" id="typeNumber" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Withdraw</button>
+                                </div>                    
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>  
+        </form>          
+     
+        {{!-- form class here for donation --}}
+        <div class ="form">
+            <div class ="card">
+                {{!-- name of the specific campagin clicked --}}
+                <div class ="card-header">
+                    <h5>Campagin Name (Donation / Contribute)</h5>
+                    <div class="position-absolute top-0 end-0">
+                        <button class='btn btn-primary' id="pendingBtnStatus"> 
+                            Pending
+                        </button>
+                    </div>                    
                     <p class="card-text">Description of the campagin</p>
                 </div>
                 
@@ -122,7 +193,7 @@
            {{!-- dashboard html content  --}}
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title" id="campaginLists">Campagin Lists</h5>
+                <h5 class="card-title" id="campaginLists">Campagin Lists (Dashboard)</h5>
                 <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#inProgress">In Progress</a>
