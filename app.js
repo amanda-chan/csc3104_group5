@@ -26,6 +26,9 @@ app.use(session({
   cookie: { secure: false } // set secure to true if using HTTPS
 }));
 
+//public folder (css, js file)
+app.use(express.static('public'))
+
 // load routes
 const loginRoute = require('./routes/login');
 const creatorRoute = require('./routes/creator');
@@ -33,6 +36,8 @@ const creatorRoute = require('./routes/creator');
 // use routes
 app.use('/', loginRoute);
 app.use('/creator', creatorRoute)
+
+
 
 
 app.listen(port, () => {

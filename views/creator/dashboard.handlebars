@@ -3,10 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{!-- CDN for boostrap --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    {{!-- <link rel = "stylesheet" href = "css/dashboard.css"> --}}
+    <style>
+        button.btn.btn-primary{
+            
+            background-color: #9E2A2B;
+            border:none;
+        }
+        a{
+            color:#EEF5DB;
+            text-decoration: none;
+        }
+        div.card{
+            margin-top: 30px;
+        }
+        .input-group{
+            margin-top:10px;
+        }
+        .collapse {
+        margin-bottom: 10px;
+    }
+    </style>
     <title>Creator Dashboard</title>
 </head>
 <body>
-    <h1>Welcome back, {{name}}</h1>
-    <a href="/creator/add_campaign">Create a Campaign</a>
+    <div class="container">
+        <!-- Content here -->
+        <h1>Welcome back, {{name}}</h1>
+        
+        {{!-- <a href ="/creator/add_campaign" >Dashboard</a> --}}
+        <button class="btn btn-primary"><a href="/creator/add_campaign">Dashboard</a></button>
+
+    
+        {{!-- backend for loop for in progress campagin is here --}}
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Campagin Lists</h5>
+                <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#inProgress">In Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#completed">Completed</a>
+                    </li>
+                </ul>
+            </div>
+
+            {{!-- tab contents for completed for loop backend is here  --}}
+            <form class="card-body tab-content">
+                <div class="tab-pane active" id="inProgress">
+                    {{!-- card 1 --}}
+                    <div class="card-body">
+                        <h5 class="card-title">Campagins Name / Title</h5>
+                        <p class="card-text">This field will be the description of the completed campgains.</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                        </div>
+
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                            Contribute to this Project
+                        </button>                        
+                        <div class="collapse" id="collapseExample1">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon1">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon1">Contribute</button>
+                            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                        </div>
+                    </div>
+
+                    {{!-- card 2 --}}
+                    <div class="card-body">
+                        <h5 class="card-title">Campagins Name / Title</h5>
+                        <p class="card-text">This field will be the description of the completed campgains.</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                        </div>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                            Contribute to this Project
+                        </button>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Contribute</button>
+                            </div>         
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- tab contents for completed for loop backend is here--}}
+                <div class="tab-pane" id="completed">
+                    <div class="card-body">
+                        <h5 class="card-title">Campagins Name / Title</h5>
+                        <p class="card-text">This field will be the description of the completed campgains.</p>
+                        <button class="btn btn-primary"><a href="#">Vote for this Campagin</a></button>
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>    
+
+
+    
+
+    {{!-- script for bootstrap --}}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
