@@ -14,6 +14,13 @@ router.get('/dashboard', (req, res) => {
     res.render('creator/dashboard', { name: name, layout: false }); // render the creator dashboard page
 });
 
+// handling GET requests for "/creator/donation"
+router.get('/donation', (req, res) => {
+
+    const name = req.session.name;
+
+    res.render('creator/donation', { name: name, layout: false }); // render the creator donation page
+});
 
 
 // handling GET requests for "/creator/add_campaign"

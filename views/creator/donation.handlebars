@@ -20,8 +20,6 @@
         }
         .card-header{
             background-color: #4F6367;
-            color:#fefae0;
-            padding:30px;
         }
         #campaginLists{
             color:#fefae0;
@@ -78,48 +76,12 @@
     <div class="container">
         <!-- Content here -->
         <h1>Welcome back, {{name}}</h1>
-    
-        {{!-- form class here --}}
-        <div class ="form">
-            <div class ="card">
-                {{!-- name of the specific campagin clicked --}}
-                <div class ="card-header">
-                    <h5>Campagin Name</h5>
-                    <p class="card-text">Description of the campagin</p>
-                </div>
-                
-                <div class="row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Goal Amount</h5>
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1">Goal Amount</span>
-                                    <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
-                                </div> 
-                                <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1">Due Date</span>
-                                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" aria-label="Due Date" aria-describedby="basic-addon1">
-                                </div>                        
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Contribution</h5>
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon2">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Contribute</button>
-                                </div>                    
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </div>  
-        </form>  
+        
+        {{!-- <a href ="/creator/add_campaign" >Dashboard</a> --}}
+        <button class="btn btn-primary"><a href="/creator/add_campaign">Dashboard</a></button>
 
-           {{!-- dashboard html content  --}}
+    
+        {{!-- backend for loop for in progress campagin is here --}}
         <div class="card">
             <div class="card-header">
                 <h5 class="card-title" id="campaginLists">Campagin Lists</h5>
@@ -132,7 +94,7 @@
                     </li>
                 </ul>
             </div>
-    
+
             {{!-- tab contents for completed for loop backend is here  --}}
             <form class="card-body tab-content">
                 <div class="tab-pane active" id="inProgress">
@@ -183,11 +145,12 @@
                         <p class="card-text">This field will be the description of the completed campgains.</p>
                         <button class="btn btn-primary"><a href="#">Vote for this Campagin</a></button>
                     </div>
-                </div>                    
+                </div>
+                
             </form>
         </div>
     </div>    
-</div>
+
 
     
 
