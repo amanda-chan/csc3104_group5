@@ -14,6 +14,8 @@ router.get('/dashboard', (req, res) => {
     res.render('creator/dashboard', { name: name, layout: false }); // render the creator dashboard page
 });
 
+
+
 // handling GET requests for "/creator/add_campaign"
 router.get('/add_campaign', (req, res) => {
 
