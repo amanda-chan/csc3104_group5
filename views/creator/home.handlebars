@@ -36,61 +36,42 @@
                 {{!-- address of campagin goes here --}}
                 <h5 class="card-title" id="campaginLists" >Campagin Lists</h5>
                 
-                <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#inProgress">In Progress</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#completed">Completed</a>
-                    </li>
-                </ul>
             </div>
     
             {{!-- tab contents for completed for loop backend is here  --}}
-            <div class="card-body tab-content">
-                <div class="tab-pane active" id="inProgress">
-                    {{!-- card 1 --}}
-                    <div class="card-body" id="campaginCard">
-                        <h5 class="card-title" ><a href="#"></a> Address of Campagin </h5>
-                        <p class="card-text">This field will be the description of the completed campgains.</p>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Balance</span>
-                            <input type="text" class="form-control" placeholder="ETH" aria-label="Balance Amount" aria-describedby="basic-addon1">
-                        </div>                        
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Goal Amount</span>
-                            <input type="text" class="form-control" placeholder="ETH" aria-label="Goal Amount" aria-describedby="basic-addon1">
-                        </div>                        
-                    </div>
-
-                    {{!-- card 2 --}}
-                    <div class="card-body" id="campaginCard">
-                        <h5 class="card-title">Campagins Name / Title</h5>
-                        <p class="card-text">This field will be the description of the completed campgains.</p>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Balance</span>
-                            <input type="text" class="form-control" placeholder="ETH" aria-label="Balance Amount" aria-describedby="basic-addon1">
+            <div class="card-body">
+                <div class = "row">
+                    <div class="col-md-4">
+                        <div class="card" id="campaginCard">
+                            <!-- ... (content of card ) ... -->
+                            <div class="card-body" id="campaginCard">
+                                <h5 class="card-title">Address of Campaign</h5>
+                                <p class="card-text">This field will be the description of the completed campgains.</p>
+                                <button class="btn btn-primary"><a href="#">Vote for this Campaign</a></button>
+                            </div>
                         </div>
-
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-addon1">Goal Amount</span>
-                            <input type="text" class="form-control" placeholder="Geth" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" id="campaginCard">
+                            <!-- ... (content of card ) ... -->
+                            <div class="card-body" id="campaginCard">
+                                <h5 class="card-title">Address of Campaign</h5>
+                                <p class="card-text">This field will be the description of the completed campgains.</p>
+                                <button class="btn btn-primary"><a href="#">Vote for this Campaign</a></button>
+                            </div>
                         </div>
-                        
                     </div>
-                </div>
-
-                {{!-- tab contents for completed for loop backend is here--}}
-                <div class="tab-pane" id="completed">
-                    <div class="card-body" id="campaginCard">
-                        <h5 class="card-title">Campagins Name / Title</h5>
-                        <p class="card-text">This field will be the description of the completed campgains.</p>
-                        <button class="btn btn-primary"><a href="#">Vote for this Campagin</a></button>
+                    <div class="col-md-4">
+                        <div class="card" id="campaginCard">
+                            <!-- ... (content of card ) ... -->
+                            <div class="card-body" id="campaginCard">
+                                <h5 class="card-title">Address of Campaign</h5>
+                                <p class="card-text">This field will be the description of the completed campgains.</p>
+                                <button class="btn btn-primary"><a href="#">Vote for this Campaign</a></button>
+                            </div>
+                        </div>
                     </div>
-                </div>                    
+                </div>                                   
             </div>
         </div>
     </div>    
