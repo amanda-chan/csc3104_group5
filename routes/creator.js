@@ -22,6 +22,22 @@ router.get('/donation', (req, res) => {
     res.render('creator/donation', { name: name, layout: false }); // render the creator donation page
 });
 
+// handling GET requests for "/creator/donation"
+router.get('/withdraw', (req, res) => {
+
+    const name = req.session.name;
+
+    res.render('creator/withdraw', { name: name, layout: false }); // render the creator donation page
+});
+
+// handling GET requests for "/creator/donation"
+router.get('/withdraw_request', (req, res) => {
+
+    const name = req.session.name;
+
+    res.render('creator/withdraw_request', { name: name, layout: false }); // render the creator donation page
+});
+
 
 // Handling GET requests for "/creator/add_campaign"
 router.get('/add_campaign', (req, res) => {
