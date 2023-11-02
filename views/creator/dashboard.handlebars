@@ -4,9 +4,346 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
+    {{!-- CDN for boostrap --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    {{!-- link for Google Fonts --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    {{!-- <link rel = "stylesheet" href = "css/dashboard.css"> --}}
+    <style>
+        body{
+            background-color: #f8f9fa;
+            font-family: 'Poppins', sans-serif;
+        }
+        .card{
+            border:none;
+        }
+        .card-header{
+            background-color: #4F6367;
+            color:#fefae0;
+            padding:30px;
+        }
+        #campaginLists{
+            color:#fefae0;
+            padding-bottom: 5px;
+        }
+        a.nav-link{
+            background-color: #ebebeb;
+            color:#000000;
+        }
+        .nav-tabs .nav-link.active:hover {
+            background-color: #c5c6c6; 
+            
+            border:none;
+        }
+        ul.nav a:hover { 
+            background-color: #c5c6c6;
+            color: #fefae0 !important; 
+            border:none;
+        }
+        
+        
+        #campaginCard.card-body{
+            border-style: solid;
+            border-radius: 20px;
+            border-width: 2px;
+            margin-bottom: 30px;
+            border-color: #4F6367;
+
+        }
+
+        button.btn.btn-primary{
+            
+            background-color: #9E2A2B;
+            border:none;
+        }
+
+        {{!-- for withdrawal css --}}
+        #successBtnStatus{
+            padding:10px; 
+            margin:10px;
+            background-color: #40916c;
+        }
+
+        {{!-- for donationcss --}}
+        #pendingBtnStatus{
+            padding:10px; 
+            margin:10px;
+            background-color: #ffc300;
+        }
+
+        #withdrawBtn{
+            width:100%;
+        }
+
+        a{
+            color:#EEF5DB;
+            text-decoration: none;
+        }
+       
+        div.card{
+            margin-top: 30px;
+        }
+        .input-group{
+            margin-top:10px;
+        }
+        .collapse {
+        margin-bottom: 10px;
+    }
+    </style>
 </head>
 <body>
-    <h1>Welcome back!</h1>
-    <a href="/creator/add_campaign">Create a Campaign</a>
+    <div class="container">
+        
+        <!-- Content here -->
+        <h1>Welcome back, {{name}}</h1>
+        {{!-- form class here for withdraw request --}}
+        <div class ="row">
+            <div class="col-md-8"> <!-- Left Column - 60% width -->
+                <form>
+                    <div class ="card">
+                        {{!-- name of the specific campagin clicked --}}
+                        <div class ="card-header">
+                            <h5>Campagin Name (Withdraw Request)</h5>
+                            <div class="position-absolute top-0 end-0">
+                                <button class='btn btn-primary' id="successBtnStatus"> 
+                                    Successful
+                                </button>
+                            </div>
+                            
+                            <p class="card-text">Description of the campagin</p>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Goal Amount</h5>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                                        </div> 
+                                        <br>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Due Date</span>
+                                            <input type="text" class="form-control" placeholder="YYYY-MM-DD" aria-label="Due Date" aria-describedby="basic-addon1">
+                                        </div>                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Contract Balance</h5>
+                                        <div class="input-group mb-3">
+                                            <span class="input-group-text" id="basic-addon1">Balance Geth</span>
+                                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Balance Geth" aria-describedby="basic-addon1">
+                                        </div>
+                                        <h7 class="card-title">Withdrawl Request</h7>                                 
+                                        <div class="input-group">
+                                            <input min="0"  type="number" class="form-control" id="typeNumber" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon2">
+                                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Withdraw</button>
+                                        </div>                    
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                    </div>  
+                </form>
+            </div>    
+            
+            <div class="col-md-4"> <!-- Right Column - 40% width -->
+                <div class="card">
+                    <div class ="card-header">
+                        <h5>Contributors</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <img src="path_to_image1.jpg" alt="Image 1" class="contributor-image">
+                                    First Contributor
+                            </li>
+                            <li class="list-group-item">
+                                <img src="path_to_image2.jpg" alt="Image 2" class="contributor-image">
+                                    Second Contributor
+                            </li>
+                            <li class="list-group-item">
+                                <img src="path_to_image3.jpg" alt="Image 3" class="contributor-image">
+                                    Thrid Contributor
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>          
+        </div>
+
+        {{!-- for withdrawal request part 2, can put in another page for easier backend --}}
+        <form>
+            <div class ="card">
+                {{!-- name of the specific campagin clicked --}}
+                <div class ="card-header">
+                    <h5>Campagin Name (Withdraw Request)</h5>
+                    <div class="position-absolute top-0 end-0">
+                        <button class='btn btn-primary' id="pendingBtnStatus"> 
+                            Pending
+                        </button>
+                    </div>  
+                    
+                    <p class="card-text">Description of the campagin</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Goal Amount</h5>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                                    <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                                </div> 
+                                <br>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Due Date</span>
+                                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" aria-label="Due Date" aria-describedby="basic-addon1">
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Recevier Address</h5>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="address" aria-label="Recevier Address" aria-describedby="basic-addon1">
+                                </div>
+                                <br>                                
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-primary" id="withdrawBtn"><a href="#">Withdraw</a></button>
+                                </div>                    
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>  
+        </form>                
+
+        {{!-- form class here for donation --}}
+        <form>
+            <div class ="card">
+                {{!-- name of the specific campagin clicked --}}
+                <div class ="card-header">
+                    <h5>Campagin Name (Donation / Contribute)</h5>
+                  
+                    <p class="card-text">Description of the campagin</p>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Goal Amount</h5>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                                    <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                                </div> 
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="basic-addon1">Due Date</span>
+                                    <input type="text" class="form-control" placeholder="YYYY-MM-DD" aria-label="Due Date" aria-describedby="basic-addon1">
+                                </div>                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Contribution</h5>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Contribute</button>
+                                </div>                    
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>  
+        </form>  
+
+           {{!-- dashboard html content  --}}
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title" id="campaginLists">Campagin Lists (Dashboard)</h5>
+                <ul class="nav nav-tabs card-header-tabs" data-bs-tabs="tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" data-bs-toggle="tab" href="#inProgress">In Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#completed">Completed</a>
+                    </li>
+                </ul>
+            </div>
+    
+            {{!-- tab contents for completed for loop backend is here  --}}
+            <form class="card-body tab-content">
+                <div class="tab-pane active" id="inProgress">
+                    {{!-- card 1 --}}
+                    <div class="card-body" id="campaginCard">
+                        <h5 class="card-title">Campagins Name / Title</h5>
+                        <p class="card-text">This field will be the description of the completed campgains.</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                        </div>
+
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                            Contribute to this Project
+                        </button>                        
+                        <div class="collapse" id="collapseExample1">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon1">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon1">Contribute</button>
+                            </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+                        </div>
+                    </div>
+
+                    {{!-- card 2 --}}
+                    <div class="card-body" id="campaginCard">
+                        <h5 class="card-title">Campagins Name / Title</h5>
+                        <p class="card-text">This field will be the description of the completed campgains.</p>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Goal Amount</span>
+                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                        </div>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                            Contribute to this Project
+                        </button>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Contribute</button>
+                            </div>         
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- tab contents for completed for loop backend is here--}}
+                <div class="tab-pane" id="completed">
+                    <div class="card-body" id="campaginCard">
+                        <h5 class="card-title">Campagins Name / Title</h5>
+                        <p class="card-text">This field will be the description of the completed campgains.</p>
+                        <button class="btn btn-primary"><a href="#">Vote for this Campagin</a></button>
+                    </div>
+                </div>                    
+            </form>
+        </div>
+    </div>    
+</div>
+
+    
+
+    {{!-- script for bootstrap --}}
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
 </html>
