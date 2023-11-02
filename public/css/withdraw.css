@@ -114,3 +114,7 @@ div.progress{
     margin-top: 10px;
     margin-bottom: 25px;
 }
+
+a#contributorAddress{
+    color:#000000;
+}

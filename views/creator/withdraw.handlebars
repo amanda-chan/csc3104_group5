@@ -36,7 +36,7 @@
                     <div class ="card">
                         {{!-- name of the specific campagin clicked --}}
                         <div class ="card-header">
-                            <h5>Campagin Name (Withdraw Request)</h5>
+                            <h5 class="card-title" ><a href="#"></a> Address of Campagin </h5>
                             <div class="position-absolute top-0 end-0">
                                 <button class='btn btn-primary' id="successBtnStatus"> 
                                     Successful
@@ -67,11 +67,11 @@
                                         <h5 class="card-title">Contract Balance</h5>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Balance Geth</span>
-                                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Balance Geth" aria-describedby="basic-addon1">
+                                            <input type="text" class="form-control" placeholder="ETH" aria-label="Balance Geth" aria-describedby="basic-addon1">
                                         </div>
                                         <h7 class="card-title">Withdrawl Request</h7>                                 
                                         <div class="input-group">
-                                            <input min="0"  type="number" class="form-control" id="typeNumber" placeholder="Contribute Amount $" aria-label="Contribution Amount" aria-describedby="button-addon2">
+                                            <input min="0"  type="number" class="form-control" id="typeNumber" placeholder="ETH" aria-label="Contribution Amount" aria-describedby="button-addon2">
                                             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Withdraw</button>
                                         </div>                    
                                     </div>
@@ -90,16 +90,13 @@
                     <div class="card-body">
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
-                                <img src="path_to_image1.jpg" alt="Image 1" class="contributor-image">
-                                    First Contributor
+                                <a href="#" id="contributorAddress">Address of Contributor</a> 
                             </li>
                             <li class="list-group-item">
-                                <img src="path_to_image2.jpg" alt="Image 2" class="contributor-image">
-                                    Second Contributor
+                                <a href="#"id="contributorAddress" >Address of Contributor</a> 
                             </li>
                             <li class="list-group-item">
-                                <img src="path_to_image3.jpg" alt="Image 3" class="contributor-image">
-                                    Thrid Contributor
+                                <a href="#"id="contributorAddress" >Address of Contributor</a> 
                             </li>
                         </ul>
                     </div>
