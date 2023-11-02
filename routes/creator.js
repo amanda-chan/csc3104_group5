@@ -23,17 +23,65 @@ router.get('/donation', (req, res) => {
 });
 
 
-// handling GET requests for "/creator/add_campaign"
+// Handling GET requests for "/creator/add_campaign"
 router.get('/add_campaign', (req, res) => {
+    try {
+        const title = req.body.title;
+        const description = req.body.description;
+        const funding_target = req.body.funding_target;
+        const minimum_contribution = req.body.minimum_contribution;
+        const campaign_duration = req.body.campaign_duration;
+            // You should render a view or send a response here.
+            res.render('creator/add_campaign', {layout: false });
+        
+    } catch (error) {
+        console.error('Error:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
 
-    // get form details
-    const title = req.body.title;
-    const description = req.body.description;
-    const funding_target = req.body.funding_target;
-    const minimum_contribution = req.body.minimum_contribution;
-    const campaign_duration = req.body.campaign_duration;
-    
-    res.render('creator/add_campaign', { layout: false }); // render the creator dashboard page
+
+// Handling POST requests to "/add_campaign" for adding a campaign
+router.post('/add_campaign', async (req, res, next) => {
+    try {
+        // Retrieve user from the session
+        const user = await User.findByPk(req.session.user_email);
+        
+        // Get form details
+        const title = req.body.title;
+        const description = req.body.description;
+        const funding_target = req.body.funding_target;
+        const minimum_contribution = req.body.minimum_contribution;
+        const campaign_duration = req.body.campaign_duration;
+
+        // Check if user is available in the session
+        if (!user) {
+            res.status(401).send('User not authorized');
+            return;
+        }
+
+        // Retrieve the user email from the user object
+        const user_email = user.user_email;
+
+        // Create a new Campaign object with user_email set
+        const newCampaign = Campaign.build({
+            title: title,
+            description: description,
+            funding_target: funding_target,
+            minimum_contribution: minimum_contribution,
+            campaign_duration: campaign_duration,
+            user_email: user_email, // Set the user_email field
+        });
+
+        // Save the new campaign to the database
+        await newCampaign.save();
+
+        res.render('creator/dashboard', { user_email: user_email, layout: false }); // Render the creator dashboard page
+    } catch (error) {
+        // Handle any errors that may occur during the database query or campaign creation
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
 module.exports = router;
