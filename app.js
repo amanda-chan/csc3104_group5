@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('node:path');
+const path = require('path'); 
 const exphbs  = require('express-handlebars'); // templating engine for generating dynamic HTML and other markup in web applications
 const bodyParser = require('body-parser'); // handle various types of data in the request body
 const session = require('express-session'); // store session when user logs in
@@ -28,7 +28,7 @@ app.use(session({
 }));
 
 //public folder (css, js file)
-app.use("/styles", express.static(__dirname + '/public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // load routes
 const loginRoute = require('./routes/login');
