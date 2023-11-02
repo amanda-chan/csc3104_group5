@@ -69,16 +69,47 @@
         .collapse {
         margin-bottom: 10px;
     }
+    .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+    .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+    .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+    .navbar a:active {
+        background-color: yellow;
+        text-decoration: underline;
+    }
+    .navbar a.active {
+        background-color: #ddd;
+        color: black;
+    }
+    h3{
+        color:white;
+    }
     </style>
     <title>Creator Dashboard</title>
 </head>
 <body>
+    <div class="navbar">
+        <h3 href="">CROWD FUNDING</h3>
+        <a href="/creator/dashboard">Dashboard</a>
+        <a class = "active" href="/creator/donation">Create a new donation</a>
+        <a href="/creator/add_campaign">Create a new campaign</a>
+        <h3>Welcome back, {{name}}</h3>
+        <a href="/">Logout</a>
+    </div>
     <div class="container">
-        <!-- Content here -->
-        <h1>Welcome back, {{name}}</h1>
-        
-        {{!-- <a href ="/creator/add_campaign" >Dashboard</a> --}}
-        <button class="btn btn-primary"><a href="/creator/add_campaign">Dashboard</a></button>
 
     
         {{!-- backend for loop for in progress campagin is here --}}
