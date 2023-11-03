@@ -59,14 +59,38 @@
                                 <h5 class="card-title">Contribution</h5>
                                 <div class="input-group">
                                     <input type="text" class="form-control" placeholder="ETH" aria-label="Contribute ETH" aria-describedby="button-addon2">
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Contribute</button>
+                                    <!-- Button trigger modal -->
+                                    <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="button-addon2">Contribute</button>
                                 </div>                    
                             </div>
                         </div>
                     </div>
                 </div> 
             </div>  
-        </form>  
+        </form>
+        
+      
+
+        <!-- Modal for confirmation of contribution -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Confirm your contribution to this campaign</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <p>Your contribution of [amount] ETH to this campaign is about to be submitted. Please confirm your contribution.</p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Confirm</button>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
         
 
