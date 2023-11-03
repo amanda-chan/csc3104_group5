@@ -15,9 +15,6 @@ router.post('/metamask', async (req, res, next) => {
     req.session.address = ethereumAddress; // place the ethereum address in the session
     console.log("Logged in with: %s", ethereumAddress);
     return res.status(200).json({ redirectTo: '/creator/dashboard' })
-
-    
-
 });
 
 module.exports = router;
