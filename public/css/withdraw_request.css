@@ -36,9 +36,12 @@ ul.nav a:hover {
     border-width: 2px;
     margin-bottom: 30px;
     border-color: #4F6367;
+    margin-top: 30px;
 
 }
-
+#completeColumn{
+    margin-top: -30px;
+}
 button.btn.btn-primary{
     
     background-color: #9E2A2B;
@@ -80,4 +83,12 @@ margin-bottom: 10px;
 
 h6{
     color:white;
+}
+
+/* progress bar styling */
+div.progress{
+    height:30px;
+    /* top right bottom left */
+    margin-top: 10px;
+    margin-bottom: 25px;
 }

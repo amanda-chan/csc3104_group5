@@ -47,6 +47,14 @@ router.get('/withdraw_request', (req, res) => {
     res.render('creator/withdraw_request', { name: name, layout: false }); // render the creator donation page
 });
 
+// handling GET requests for "/withdraw_requestv2/donation"
+router.get('/withdraw_requestv2', (req, res) => {
+
+    const name = req.session.name;
+
+    res.render('creator/withdraw_requestv2', { name: name, layout: false }); // render the creator donation page
+});
+
 // handling GET requests for "/home"
 router.get('/home', (req, res) => {
 
