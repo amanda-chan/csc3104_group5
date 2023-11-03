@@ -35,39 +35,44 @@
                   
                     <p class="card-text">Description of the campaign</p>
                 </div>
-                
-                <div class="row">
-                    <div class="col-sm-6 mb-3 mb-sm-0">
-                        <div class="card">
-                            <div class="card-body">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class ="row">
                                 <h5 class="card-title">Title</h5>
-                                
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1">Title</span>
                                     <input type="text" class="form-control" aria-label="Title" aria-describedby="basic-addon1" required>
-                                </div>
-                                <h5 class="card-title">Description</h5>
-                                <div class="input-group mb-3">
+                                </div>    
                                 
-                                    <span class="input-group-text" id="basic-addon1">Description</span>
-                                    <input type="text" class="form-control" aria-label="Description" aria-describedby="basic-addon1" required>
+                            
+                            <div class="row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <br>
+                                    <h5 class="card-title">Funding Target (ETH):</h5>
+                                    <div class="input-group mb-3">
+                                        <input type="number" step="0.001" min="0.001" class="form-control" id="targetInput" placeholder="ETH" aria-label="Funding target ETH" aria-describedby="button-addon2" required>
+                                    </div>
+                                    <br>
+                                    <h5 class = "card-title">Minimum Contribution (ETH):</h5>       
+                                    <div class="input-group mb-3">
+                                        <input type="number" step="0.001" min="0.001"  class="form-control" id="minContributionInput" placeholder="ETH" aria-label="Minimum Contribution ETH" aria-describedby="button-addon2" required>
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <br>
+                                    <h5 class="card-title" id="addCampaignDescription">Description</h5>
+                                    <div class="input-group mb-3">
+                                        <textarea class="form-control" id="addCampaignDescription" rows="6" ></textarea>
+                                        {{!-- <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" required></textarea> --}}
+                                    </div>
                                 </div>                         
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="row">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Funding Target (ETH):</h5>
-                                <div class="input-group mb-3">
-                                    <input type="number" step="0.001" min="0.001" class="form-control" placeholder="ETH" aria-label="Funding target ETH" aria-describedby="button-addon2" required>
-                                </div>
-                                
-                                <h5 class = "card-title">Minimum Contribution (ETH):</h5>       
-                                <div class="input-group mb-3">
-                                    <input type="number" step="0.001" min="0.001"  class="form-control" placeholder="ETH" aria-label="Minimum Contribution ETH" aria-describedby="button-addon2" required>
-                                </div>
-                                <br>
                                 <button class="btn btn-primary" id = "createCampaignBtn" type="submit">Create Campaign</button>
                             </div>
                         </div>

@@ -46,11 +46,18 @@ button.btn.btn-primary{
 }
 
 #createCampaignBtn{
-    width: 100%;
+    width: 45%;
+    height:50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; 
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+#targetInput, #minContributionInput{
+    margin-right: 100px;
 }
 
 a{
