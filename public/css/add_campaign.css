@@ -1,0 +1,73 @@
+body{
+    background-color: #f8f9fa;
+    font-family: 'Poppins', sans-serif;
+}
+.card{
+    border:none;
+}
+.card-header{
+    background-color: #4F6367;
+    color:#fefae0;
+    padding:30px;
+}
+#campaginLists{
+    color:#fefae0;
+    padding-bottom: 5px;
+}
+a.nav-link{
+    background-color: #ebebeb;
+    color:#000000;
+}
+.nav-tabs .nav-link.active:hover {
+    background-color: #c5c6c6; 
+    
+    border:none;
+}
+ul.nav a:hover { 
+    background-color: #c5c6c6;
+    color: #fefae0 !important; 
+    border:none;
+}
+
+
+#campaginCard.card-body{
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 2px;
+    margin-bottom: 30px;
+    border-color: #4F6367;
+
+}
+
+button.btn.btn-primary{
+    
+    background-color: #9E2A2B;
+    border:none;
+}
+
+#createCampaignBtn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+}
+
+a{
+    color:#EEF5DB;
+    text-decoration: none;
+}
+
+div.card{
+    margin-top: 30px;
+}
+.input-group{
+    margin-top:10px;
+}
+.collapse {
+margin-bottom: 10px;
+}
+
+h6{
+    color:white;
+}
