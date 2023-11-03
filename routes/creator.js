@@ -14,6 +14,15 @@ router.get('/dashboard', (req, res) => {
     res.render('creator/dashboard', { name: name, layout: false }); // render the creator dashboard page
 });
 
+// handling GET requests for "/creator/dashboardv2"
+router.get('/dashboardv2', (req, res) => {
+
+    const name = req.session.name;
+
+    res.render('creator/dashboardv2', { name: name, layout: false }); // render the creator dashboard page
+});
+
+
 // handling GET requests for "/creator/donation"
 router.get('/donation', (req, res) => {
 
@@ -22,7 +31,7 @@ router.get('/donation', (req, res) => {
     res.render('creator/donation', { name: name, layout: false }); // render the creator donation page
 });
 
-// handling GET requests for "/creator/donation"
+// handling GET requests for "/withdraw/donation"
 router.get('/withdraw', (req, res) => {
 
     const name = req.session.name;
@@ -30,7 +39,7 @@ router.get('/withdraw', (req, res) => {
     res.render('creator/withdraw', { name: name, layout: false }); // render the creator donation page
 });
 
-// handling GET requests for "/creator/donation"
+// handling GET requests for "/withdraw_request/donation"
 router.get('/withdraw_request', (req, res) => {
 
     const name = req.session.name;
@@ -38,7 +47,7 @@ router.get('/withdraw_request', (req, res) => {
     res.render('creator/withdraw_request', { name: name, layout: false }); // render the creator donation page
 });
 
-// handling GET requests for "/creator/donation"
+// handling GET requests for "/home"
 router.get('/home', (req, res) => {
 
     const name = req.session.name;
