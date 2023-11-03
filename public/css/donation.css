@@ -10,7 +10,7 @@ body{
     color:#fefae0;
     padding:30px;
 }
-#campaginLists{
+#campaignLists{
     color:#fefae0;
     padding-bottom: 5px;
 }
@@ -30,7 +30,7 @@ ul.nav a:hover {
 }
 
 
-#campaginCard.card-body{
+#campaignCard.card-body{
     border-style: solid;
     border-radius: 20px;
     border-width: 2px;
