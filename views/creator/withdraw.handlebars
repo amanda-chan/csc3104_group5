@@ -54,7 +54,7 @@
                                         <h5 class="card-title">Goal Amount</h5>
                                         <div class="input-group mb-3">
                                             <span class="input-group-text" id="basic-addon1">Goal Amount</span>
-                                            <input type="text" class="form-control" placeholder="$0.00" aria-label="Goal Amount" aria-describedby="basic-addon1">
+                                            <input type="number" step="0.001" min="0.001" class="form-control" placeholder="ETH" aria-label="Goal Amount" aria-describedby="basic-addon1">
                                         </div> 
                                         <br>
                                                
@@ -71,7 +71,7 @@
                                         </div>
                                         <h7 class="card-title">Withdrawl Request</h7>                                 
                                         <div class="input-group">
-                                            <input min="0"  type="number" class="form-control" id="typeNumber" placeholder="ETH" aria-label="Contribution Amount" aria-describedby="button-addon2">
+                                            <input step="0.001" min="0.001" type="number" class="form-control" id="typeNumber" placeholder="ETH" aria-label="Contribution Amount" aria-describedby="button-addon2">
                                             <button class="btn btn-outline-secondary" type="button" id="button-addon2">Withdraw</button>
                                         </div>                    
                                     </div>
