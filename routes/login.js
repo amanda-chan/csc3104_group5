@@ -14,17 +14,9 @@ router.post('/metamask', async (req, res, next) => {
     const ethereumAddress = req.body.address;
     req.session.address = ethereumAddress; // place the ethereum address in the session
     console.log("Logged in with: %s", ethereumAddress);
+    return res.status(200).json({ redirectTo: '/creator/dashboard' })
 
-    const role = req.session.role;
-
-    if (role === "Creator") { // if user is a Creator, head to creator dashboard
-
-        return res.status(200).json({ redirectTo: '/creator/dashboard' })
-
-    } else { // if user is a Backer, head to backer dashboard
-
-        return res.status(200).json({ redirectTo: '/backer/dashboard' });
-    }
+    
 
 });
 
