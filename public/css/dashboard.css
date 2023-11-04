@@ -8,9 +8,10 @@ body{
 .card-header{
     background-color: #4F6367;
     color:#fefae0;
-    
-    
 }
+
+
+
 #campaignLists{
     color:#fefae0;
     padding-bottom: 5px;
@@ -20,13 +21,18 @@ h5#campaignLists.card-title{
     padding-bottom: 15px;
     
 }
-a.nav-link{
-    background-color: #ebebeb;
+a#option.nav-link {
+    background-color:none;
     color:#000000;
 }
+
+.nav-tabs .nav-link {
+    background-color: #ebebeb;
+    color:black;
+}
+
 .nav-tabs .nav-link.active:hover {
     background-color: #c5c6c6; 
-    
     border:none;
 }
 ul.nav a:hover { 
@@ -67,9 +73,7 @@ div.card{
 .input-group{
     margin-top:10px;
 }
-.collapse {
-margin-bottom: 10px;
-}
+
 
 /* progress bar styling */
 div.progress{
@@ -78,6 +82,11 @@ div.progress{
     margin-top: 10px;
     margin-bottom: 25px;
 }
+
+h6{
+    color:white;
+}
+
 /* .progress-bar-striped.progress-bar-animated {
     background-color: #7b2cbf;
     background-image: linear-gradient(-45deg,#c77dff 25%,transparent 25%,transparent 50%,#c77dff 50%,#c77dff 75%,transparent 75%,transparent); 
@@ -87,6 +96,3 @@ div.progress{
     background: linear-gradient(45deg, #ff5733, #d80c1f);
 } */
 
-h6{
-    color:white;
-}
