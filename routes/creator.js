@@ -63,6 +63,15 @@ router.get('/home', (req, res) => {
     res.render('creator/home', { name: name, layout: false }); // render the creator donation page
 });
 
+// handling GET requests for "/creator/navbar"
+router.get('/navbar', (req, res) => {
+
+    const name = req.session.name;
+
+    res.render('creator/navbar', { name: name, layout: false }); // render the creator donation page
+});
+
+
 
 // Handling GET requests for "/creator/add_campaign"
 router.get('/add_campaign', (req, res) => {
